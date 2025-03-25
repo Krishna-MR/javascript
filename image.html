@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover to Change Image & Text</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+        }
+        #content {
+            display: inline-block;
+            cursor: pointer;
+        }
+        img {
+            width: 400px; 
+            height: 250px; 
+            border-radius: 10px; 
+            transition: opacity 0.5s ease-in-out;
+        }
+        p {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Hover over the image to see the change</h1>
+
+    <div id="content">
+        <img id="image" src="image1.jpg" alt="Initial Image">
+        <p id="text">Hover over me!</p>
+    </div>
+
+    <script>
+        const image = document.getElementById("image");
+        const text = document.getElementById("text");
+
+        document.getElementById("content").addEventListener("mouseenter", function() {
+            image.src = "image2.jpg"; 
+            text.innerText = "Image and text changed!";
+        });
+
+        document.getElementById("content").addEventListener("mouseleave", function() {
+            image.src = "image1.jpg"; 
+            text.innerText = "Hover over me!";
+        });
+    </script>
+
+</body>
+</html>
